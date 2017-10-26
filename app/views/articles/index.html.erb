@@ -1,0 +1,18 @@
+<h1>文章列表</h1>
+<%= link_to '添加新文章',new_article_path %>
+<%= link_to '返回首页',root_path %>
+<table>
+    <tr>
+        <th>Title</th>
+        <th>Text</th>
+    </tr>
+    <% @articles.each do |article| %>
+    <tr>
+        <td><%= article.title %></td>
+        <td><%= article.text %></td>
+        <td><%= link_to 'show',article_path(article) %></td>
+        <td><%= link_to 'edit',edit_article_path(article) %></td>
+    </tr>
+    <% end %>
+    
+</table>
