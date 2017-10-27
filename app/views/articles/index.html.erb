@@ -3,15 +3,18 @@
 <%= link_to '返回首页',root_path %>
 <table>
     <tr>
+        <th>Id</th>
         <th>Title</th>
         <th>Text</th>
     </tr>
     <% @articles.each do |article| %>
     <tr>
+        <td><%= article.id %></td>
         <td><%= article.title %></td>
         <td><%= article.text %></td>
         <td><%= link_to 'show',article_path(article) %></td>
         <td><%= link_to 'edit',edit_article_path(article) %></td>
+        <td><%= link_to 'destroy',article_path(article),method: :delete,data:{confirm:'确定要删除吗?'} %></td>
     </tr>
     <% end %>
     

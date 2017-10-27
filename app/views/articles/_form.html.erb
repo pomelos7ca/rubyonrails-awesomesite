@@ -1,6 +1,4 @@
-<h1>编辑文章</h1>
-<!--
-<%= form_for(@article,method: :patch) do |f| %>
+<%= form_for @article do |f| %>
 
     <% if @article.errors.any? %>
         <div id="error_explanation">
@@ -30,8 +28,3 @@
         <%= f.submit %>
     </p>
 <% end %>
--->
-<%= render 'form' %>
-<%= link_to '返回',articles_path %>
-
-

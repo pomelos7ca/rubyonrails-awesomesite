@@ -5,7 +5,21 @@
 <p>
     <strong>Text:</strong>
     <%= @article.text %>
-    
 </p>
+<hr>
+<h2>评论:</h2>
+<!--
+<%# @article.comments.each do |comment| %>
+    <p><strong>评论者:</strong><%#= comment.commenter %></p>
+    <p><strong>评论内容:</strong><%#= comment.body %></p>
+<%# end %>
+-->
+<%= render @article.comments %>
+
+<hr>
+<h2>添加评论</h2>
+<%= render 'comments/form' %>
+
+
 <%= link_to '返回',articles_path %>
 <%= link_to '编辑',edit_article_path(@article) %>
